@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-color:#c5c6d8;
+        }
+        .container{
+            width:700px;
+            height:430px;
+            
+            background-color: white;
+            margin-top: 100px;
+            margin-left: 410px;
+            margin-right: 300px;
+            box-shadow: 10px 15px 10px #3e3d53;
+            
+        }
+        #submit2{
+            background-color:#3e3d53;
+	        color: honeydew;
+	        cursor: pointer;
+	   font-size: 20px;
+	   width: 40%;
+       float: right;
+	   padding: 14px 20px;
+	   border: none;
+	   border-radius: 4px;
+
+        }
+        #submit{
+            background-color:#3e3d53;
+	        color: honeydew;
+	        cursor: pointer;
+	   font-size: 20px;
+	   width: 40%;
+       float: left;
+	   padding: 14px 20px;
+	   border: none;
+	   border-radius: 4px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1 style="background-color:#3e3d53 ;text-align: center; color:white;">Instruction</h1>
+        <ul style="list-style-type: disc;">
+            <li style="font-size: 30px;">You will face 10 MCQ questions</li>
+            <li style="font-size: 30px;" >Total time will be 2 min</li>
+            <li style="font-size: 30px;">All questions are mandatory and no negative marking</li> 
+            <li style="font-size: 30px;">submit the test in time otherwise u will lose ur score</li>
+            <li style="font-size: 30px;">You can visit the test only once </li>
+            
+
+        </ul>
+        <h2 style="text-align: center;">ALL THE BEST</h2>
+        <br><br><br><br>
+        <form action = "/<%=data.data%>/test" method ='POST'>
+            <input type='submit'  id = "submit2"  value ='Take a test' >
+        </form>
+        <form action = '/back' method ='POST'>
+            <input type='submit'  id = "submit"  value ='Back' >
+        </form><br>
+        </div>
+    
+</body>
+</html>

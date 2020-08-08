@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-color: #c5c6d8;
+        }
+        .container{
+            float:right;
+        }
+        .container2{
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            
+            box-shadow: 10px 15px 10px #3e3d53;
+            
+        }
+        .container3{
+            width: 800px;
+            height: 650px;
+            background-color: white;
+            float: right;
+            box-shadow: 10px 15px 10px #3e3d53;
+            
+
+        }
+        .container4{
+            width: 1500px;
+            height: 300px;
+            background-color: white;
+            margin-top: 650px;
+            box-shadow: 10px 15px 10px #3e3d53;
+            }
+            #submit2{
+            background-color:#3e3d53;
+	   color: honeydew;
+	   
+	   cursor: pointer;
+	   font-size: 20px;
+	   width: 20%;
+	   float: left;
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+       
+        }
+        #submit{
+            background-color:#3e3d53;
+	   color: honeydew;
+	   
+	   cursor: pointer;
+	   font-size: 20px;
+	   width: 20%;
+	   float: right;
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+       margin-top: 30px;
+        }
+        #textarea{
+            height: 100px;
+            width: 1500px;
+            margin-top: 500px;
+
+        }
+        .container5{
+            
+            height:300px;
+            margin-top: 300px;
+            
+        }
+        #rsubmit{
+            width:10%;
+            text-align: center;
+            float: right;
+            cursor: pointer;
+            padding: 10px 12px;
+            color: white;
+            background-color:#3e3d53 ;
+            font-size: 20px;
+            margin: 8px 0;
+	        border: none;
+	        border-radius: 4px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>Total seconds spent</h1>
+        <h1 id="counter"></h1>
+        <!--<label id = 'counter1'>00</label>:<label id ="counter2">00</label>-->
+    </div>
+    <div class ='container2' style="text-align: center">
+        <h1>Best Performance</h1>
+        <label style = "font-size: 25px;"><%=data.high%></label>:<label  style = "font-size: 25px;"><%=data.highval%></label><br><br>
+        <label style = "font-size: 25px;"><%=data.sechigh%></label>:<label style = " font-size: 25px;"><%=data.sechighval%></label><br><br>
+        <label style = "font-size: 25px; "><%=data.thihigh%></label>:<label style =" font-size: 25px; ""><%=data.thihighval%></label><br><br>
+
+
+    </div><br><br><br>
+    <div class ='container3' style="text-align: center">
+        <h1>Topic-Wise Score</h1>
+        
+        
+        
+            <label style="font-size: 25px;">Creative Writing</label>:<label style="font-size: 25px;"><%=data.v1%></label><br><br>
+            <label style="font-size: 25px;">coding</label>:<label style="font-size: 25px;"><%=data.v2%></label><br><br>
+            <label style="font-size: 25px;">Consultancy</label>:<label style="font-size: 25px;"><%=data.v3%></label><br><br>
+            <label style="font-size: 25px;">socialwork</label>:<label style="font-size: 25px;"><%=data.v4%></label><br><br>
+            <label style="font-size: 25px;">politics</label>:<label style="font-size: 25px;"><%=data.v7%></label><br><br>
+            <label style="font-size: 25px;">robotics</label>:<label style="font-size: 25px;"><%=data.v9%></label><br><br>
+            <label style="font-size: 25px;">fashion</label>:<label style="font-size: 25px;"><%=data.v5%></label><br><br>
+            <label style="font-size: 25px;">marketing</label>:<label style="font-size: 25px;"><%=data.v11%></label><br><br>
+            <label style="font-size: 25px;">historian</label>:<label style="font-size: 25px;"><%=data.v8%></label><br><br>
+            <label style="font-size: 25px;">geographer</label>:<label style="font-size: 25px;"><%=data.v12%></label><br><br>
+            <label style="font-size: 25px;">travel</label>:<label style="font-size: 25px;"><%=data.v6%></label><br><br>
+            <label style="font-size: 25px;">medico</label>:<label style="font-size: 25px;"><%=data.v10%></label><br><br>
+            
+    </div><br><br><br>
+    <div class='container4' style="text-align: center">
+        <h1>You Are Best At:-</h1>
+        <label style = "font-size: 25px; "><%=data.high%></label>:<label style = "font-size: 25px; "><%=data.highval%></label><br><br>
+    </div>
+    <form action = '/back2' method ='POST'>
+        <input type='submit'  id = "submit"  value ='Take A Test' >
+    </form><br>
+    <form action = '/back2' method ='POST'>
+        <input type='submit'  id = "submit2"  value ='Back' >
+    </form><br>
+    <div class='container5'>
+        <h1 style="background-color: #3e3d53 ; color: white; text-align: center;">Reviews</h1>
+        
+        <% for( var i=0; i< 100; i++){%>
+            <h3 style="background-color: #3e3d53 ; color: white; "><%=data.value1[i]%></h2>
+            <p><%=data.value2[i]%></p>
+            
+        <%}%>
+        <form action="/review" method="POST">
+            <textarea id="textarea" name='content'>Write your review</textarea>
+            <input type="submit" value='submit'id='rsubmit'>
+        </form>
+        <br><br>
+        </div>
+        
+        
+
+    
+</body>
+<script>
+var timer;
+var timerStart;
+var timeSpentOnSite = getTimeSpentOnSite();
+
+function getTimeSpentOnSite(){
+    timeSpentOnSite = parseInt(localStorage.getItem('timeSpentOnSite'));
+    timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
+    return timeSpentOnSite;
+}
+
+function startCounting(){
+    timerStart = Date.now();
+    timer = setInterval(function(){
+        timeSpentOnSite = getTimeSpentOnSite()+(Date.now()-timerStart);
+        localStorage.setItem('timeSpentOnSite',timeSpentOnSite);
+        timerStart = parseInt(Date.now());
+        // Convert to seconds
+        /*var totalseconds=parseInt(timeSpentOnSite/1000)
+        var seconds= checkin(totalSeconds % 60);
+        var minutes = checkin(parseInt(totalSeconds / 60));  
+        function checkin(val) {
+         var valString = val + "";
+         if (valString.length < 2) {
+         return "0" + valString;
+         } else {
+         return valString;
+        }
+        }*/
+        document.getElementById('counter').innerHTML= parseInt(timeSpentOnSite/1000);
+        /*document.getElementById('counter1').innerHTML= seconds;
+        document.getElementById('counter2').innerHTML= minutes;*/
+    },1000);
+}
+startCounting();
+var stopCountingWhenWindowIsInactive = true; 
+
+if( stopCountingWhenWindowIsInactive ){
+
+    if( typeof document.hidden !== "undefined" ){
+        var hidden = "hidden", 
+        visibilityChange = "visibilitychange", 
+        visibilityState = "visibilityState";
+    }else if ( typeof document.msHidden !== "undefined" ){
+        var hidden = "msHidden", 
+        visibilityChange = "msvisibilitychange", 
+        visibilityState = "msVisibilityState";
+    }
+    var documentIsHidden = document[hidden];
+
+    document.addEventListener(visibilityChange, function() {
+        if(documentIsHidden != document[hidden]) {
+            if( document[hidden] ){
+                // Window is inactive
+                clearInterval(timer);
+            }else{
+                // Window is active
+                startCounting();
+            }
+            documentIsHidden = document[hidden];
+        }
+    });
+}
+</script>
+</html>
